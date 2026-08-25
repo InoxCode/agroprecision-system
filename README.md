@@ -169,7 +169,7 @@ Para administrar diferentes estados de dispositivos, cultivos, inventarios o sis
 
 ---
 
-# 🛠️ Tecnologías propuestas
+# Tecnologías propuestas
 
 ## Backend
 
