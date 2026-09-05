@@ -334,3 +334,40 @@ input {
     display: none;
   }
 }
+.login-message {
+  margin-top: -6px;
+  padding: 14px;
+
+  border: 1px solid #e6bcbc;
+  border-radius: 8px;
+
+  background: #fff5f5;
+  color: #922b2b;
+
+  font-size: 13px;
+}
+
+.login-message p {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.login-message span {
+  display: block;
+  font-size: 12px;
+}
+
+.blocked-message {
+  border-color: #d69b9b;
+  background: #fbecec;
+  color: #7d1f1f;
+}
+
+.welcome-panel h2 {
+  color: #176b3a;
+}
+
+.welcome-panel p {
+  color: #68736b;
+  line-height: 1.6;
+}
