@@ -576,7 +576,7 @@ De esta manera, cada patrón se encuentra asociado a una responsabilidad concret
 
 La demostración del patrón Factory Method se encuentra en:
 
-`Semana 4 (Factory Method)/video/FactoryMethod_AgroPrecision_Semana4.mp4`
+`Semana 4 (Factory Method)/video/FactoryMethod_AgroPrecision_Semana4.mov`
 
 En el video se mostrará:
 
