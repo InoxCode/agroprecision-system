@@ -1,6 +1,9 @@
 package com.agroprecision.irrigation.domain.model;
 
-public class IrrigationPlan {
+import com.agroprecision.irrigation.prototype.Prototype;
+
+public class IrrigationPlan
+        implements Prototype<IrrigationPlan> {
 
     private final String cropId;
     private final String zone;
@@ -26,6 +29,34 @@ public class IrrigationPlan {
         this.waterVolumeLiters = waterVolumeLiters;
         this.automatic = automatic;
         this.priority = priority;
+    }
+
+    @Override
+    public IrrigationPlan copy() {
+        return new IrrigationPlan(
+                cropId,
+                zone,
+                soilMoistureThreshold,
+                durationMinutes,
+                waterVolumeLiters,
+                automatic,
+                priority
+        );
+    }
+
+    public IrrigationPlan copyFor(
+            String newCropId,
+            String newZone
+    ) {
+        return new IrrigationPlan(
+                newCropId,
+                newZone,
+                soilMoistureThreshold,
+                durationMinutes,
+                waterVolumeLiters,
+                automatic,
+                priority
+        );
     }
 
     public String getCropId() {

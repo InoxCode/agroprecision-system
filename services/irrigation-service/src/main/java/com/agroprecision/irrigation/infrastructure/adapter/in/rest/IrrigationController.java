@@ -1,6 +1,7 @@
 package com.agroprecision.irrigation.infrastructure.adapter.in.rest;
 
 import com.agroprecision.irrigation.application.director.IrrigationPlanDirector;
+import com.agroprecision.irrigation.application.prototype.IrrigationPlanPrototypeService;
 import com.agroprecision.irrigation.domain.model.IrrigationPlan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,11 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class IrrigationController {
 
     private final IrrigationPlanDirector director;
+    private final IrrigationPlanPrototypeService prototypeService;
 
     public IrrigationController(
-            IrrigationPlanDirector director
+            IrrigationPlanDirector director,
+            IrrigationPlanPrototypeService prototypeService
     ) {
         this.director = director;
+        this.prototypeService = prototypeService;
     }
 
     @GetMapping("/automatic-plan")
@@ -25,6 +29,17 @@ public class IrrigationController {
             @RequestParam String zone
     ) {
         return director.createAutomaticPlan(
+                cropId,
+                zone
+        );
+    }
+
+    @GetMapping("/prototype-plan")
+    public IrrigationPlan createFromPrototype(
+            @RequestParam String cropId,
+            @RequestParam String zone
+    ) {
+        return prototypeService.clonePlan(
                 cropId,
                 zone
         );
